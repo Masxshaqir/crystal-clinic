@@ -92,6 +92,19 @@ Start the Django development server:
 python manage.py runserver
 
 	7. Access the Admin Panel
-Navigate to http://127.0.0.1:8000/admin and log in using the superuser credentials you created.
+Navigate to http://127.0.0.1:8000/admin and log in using the superuser credentials you created
+```
 
-  	
+## Deployment
+To Deploy This project to heroku follow the steps.
+
+1. Create New App on heroku
+2. On Deployment method Choose Github
+3. on your django project insure you have requirements.txt
+4. on your django project insure you have runtime.txt and write in this the python version you want to use
+5. on your django project insure you have Procfile and write in this the web: gunicorn crystal.wsgi
+6. in your project run the following command to collect static files python manage.py collectstatic
+7. upload last version of your project to github
+8. in Manual deploy section on heroku website choose deploy branch
+
+
