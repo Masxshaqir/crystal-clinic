@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 
 from crystal import settings
 from landing_page.models import Book ,Comment
-from django.core.mail import send_mail 
+from django.core.mail import send_mail
 from django.contrib import messages
 from django.db import transaction
 
@@ -32,7 +32,7 @@ def index(request):
                 message = f"""
                     Dear Crystal Client,
                     you have an appointment at {request.POST['date']} {request.POST['time']}
-                    
+
                     Thanks & BR
                 """
                 #send mail after reservation
@@ -43,32 +43,32 @@ def index(request):
                     [request.POST.get('email', None)],
                     fail_silently=False,
                 )
-                
+
                 # Store success message in session
                 request.session['success'] = 'You booked successfully at ' + str(request.POST['date']) + " " + str(request.POST['time'])
-            
+
         except Exception as e:
-            
+
             # Store error message in session
             request.session['error'] = str(e).replace('[','').replace(']','')
-    
+
         return redirect(index)
-    
+
     else:
         # Retrieve messages from session
         context['success'] = request.session.pop('success', None)
         context['error'] = request.session.pop('error', None)
-        
-        return render(request, 'index.html', context)    
-    
+
+        return render(request, 'index.html', context)
+
 def add_comment(request):
     if request.method == 'POST':
         try :
             with transaction.atomic():
-            
+
                 new_comment = Comment.objects.create(comment = request.POST.get('comment',None))
-                
-            
+
+
                 messages.add_message(request, messages.INFO, 'Comment Add successfully')
                 return redirect('/#reviews')
         except Exception as e:
@@ -76,3 +76,12 @@ def add_comment(request):
             return redirect('/#reviews')
     else:
         return redirect('/#reviews')
+
+def login_view(request):
+    return render(request, 'login.html')
+
+def signup_view(request):
+    return render(request, 'signup.html')
+
+def appointments_view(request):
+    return render(request, 'appointments.html')
