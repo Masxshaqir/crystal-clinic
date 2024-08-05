@@ -1,0 +1,573 @@
+/* Import Montserrat font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --mainColor: #004080;
+  --whiteColor: #ffffff;
+  --grayColor: #cacaca;
+  --cardBg: #ececec;
+  --boxShadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  background: #f4f4f9;
+}
+
+body.overlay {
+  overflow: hidden;
+}
+
+body.overlay::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--mainColor);
+  z-index: 1000;
+  height: 100px;
+}
+
+.hero_page {
+  height: calc(100vh - 100px);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 2rem;
+}
+
+.logo {
+  max-height: 100%;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-menu .nav-menu_item {
+  color: var(--whiteColor);
+  position: relative;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-menu_item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-menu_item:hover::after {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav-close {
+  display: none;
+}
+
+.text-container {
+  max-width: 60%;
+}
+
+.section_title {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 2rem;
+  color: var(--mainColor);
+}
+
+.service_section {
+  margin: 6rem 0;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.booking_section {
+  margin: 6rem 0;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  padding: 0.5rem 2rem;
+  overflow: hidden;
+}
+
+/* .service-item {
+  background: var(--whiteColor);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border: 1px solid var(--mainColor);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 15px;
+  transition: background-color 0.3s, transform 0.3s;
+} */
+
+/* .service-item:hover {
+  transform: scale(1.05);
+} */
+
+.service-item {
+  position: relative;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg);
+}
+
+.service-item:hover .card-inner {
+  transform: rotateX(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front {
+  background: var(--cardBg);
+  padding: 1rem;
+  box-shadow: var(--boxShadow);
+  border-radius: 15px;
+}
+
+.card-back {
+  background: var(--mainColor);
+  padding: 1rem;
+  color: var(--whiteColor);
+  box-shadow: var(--boxShadow);
+  border-radius: 15px;
+  transform: rotateX(180deg);
+}
+
+.price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--mainColor);
+}
+.price_in_back {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.review {
+  background: var(--whiteColor);
+  padding: 2rem;
+  border-left: 2px solid var(--mainColor);
+  box-shadow: var(--boxShadow);
+  border-radius: 50px;
+  position: relative;
+  margin-bottom: 4rem;
+}
+.comment_icon {
+  position: absolute;
+  top: -16px;
+  right: 10px;
+  color: var(--mainColor);
+  font-size: 20px;
+  background-color: var(--whiteColor);
+  padding: 4px;
+}
+
+.comment_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 16px auto;
+}
+
+.comment_text {
+  width: 50%;
+  padding: 12px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.comment_btn {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--mainColor);
+  color: var(--whiteColor);
+  padding: 8px 24px;
+  width: fit-content;
+}
+
+.bookingForm {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem;
+  min-height: 500px;
+  background: url("../images/banner-img3.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.appointment_text {
+  color: var(--mainColor);
+}
+
+.bookingForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bookingForm input,
+.bookingForm button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: var(--boxShadow);
+  outline: none;
+}
+
+.bookingForm button {
+  background: var(--mainColor);
+  color: var(--whiteColor);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact .section_title {
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--whiteColor);
+  background-color: var(--mainColor);
+  width: 100%;
+  padding: 2rem;
+}
+
+.footer_icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: var(--mainColor);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transition: left 0.3s ease-in-out;
+    z-index: 1;
+    box-shadow: var(--boxShadow);
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu.open {
+    left: 0;
+  }
+
+  .nav-close {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    overflow: hidden;
+  }
+
+  .text-container {
+    max-width: 80%;
+  }
+
+  .section_title {
+    font-size: 2rem;
+  }
+  .bookingForm {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 400px;
+  }
+  .appointment_text {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-menu a {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .section_title {
+    font-size: 1.5rem;
+  }
+
+  .footer {
+    font-size: 14px;
+    padding: 1rem;
+  }
+}
+
+.reviews_section {
+  padding: 20px;
+  overflow: hidden;
+}
+
+.section_title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.reviews_section {
+  position: relative;
+  padding: 20px;
+  text-align: center;
+}
+
+.section_title {
+  margin-bottom: 20px;
+}
+
+.swiper-container {
+  display: inline-block;
+  width: 90%;
+  padding: 10px;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  align-items: center !important;
+}
+
+.swiper-slide {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.review p {
+  margin: 10px 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  /* transform: translateY(-50%); */
+  width: auto;
+  height: auto;
+  margin-top: -20px !important;
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.comment_title {
+  text-align: center;
+  color: var(--mainColor);
+  font-size: 20px;
+}
+
+.truncate_text {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.footer a {
+  color: unset;
+}
+.footer a:hover {
+  color: var(--grayColor);
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--grayColor);;
+}
+
+.login-box {
+  background: var(--whiteColor);
+  padding: 20px 40px;
+  box-shadow: var(--boxShadow);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  color: var(--mainColor);
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.login-box label {
+  margin-bottom: 5px;
+  color: var(--mainColor);
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"],
+.login-box input[type="submit"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--grayColor);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-box input[type="email"]:focus,
+.login-box input[type="password"]:focus {
+  border-color: var(--mainColor);
+  outline: none;
+}
+
+.login-box input[type="submit"] {
+  background: var(--mainColor);
+  color: var(--whiteColor);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-box input[type="submit"]:hover {
+  background: var(--mainColor);
+}
+
+.signup-text {
+  margin-top: 15px;
+  color: var(--mainColor);
+}
+
+.signup-text a {
+  color: var(--mainColor);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
