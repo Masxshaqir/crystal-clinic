@@ -10,6 +10,12 @@ Welcome to **Crystal Dent**, a comprehensive web application designed to offer a
 # Booking Section 
 ![Screenshot 2024-08-01 at 21 47 33](https://github.com/user-attachments/assets/fa8d9449-3cbf-4af1-bf62-a71f504ec945)
 
+# Show all Appointments Section 
+![Screenshot from 2024-08-06 23-27-07](https://github.com/user-attachments/assets/d7e7ae94-b844-473c-8dbb-4198ccfe8d1b)
+
+# Edit Appointments Section 
+![Screenshot from 2024-08-06 23-27-26](https://github.com/user-attachments/assets/c7acf767-6401-4496-9683-9efbfd0d495a)
+
 ## Features
 
 - Form Structure: The form is structured using HTML form tags and includes input fields for user
