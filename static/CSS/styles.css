@@ -531,7 +531,8 @@ body.overlay::before {
 
 .login-box input[type="email"],
 .login-box input[type="password"],
-.login-box input[type="submit"] {
+.login-box input[type="submit"], 
+.login-box input[type="text"] {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid var(--grayColor);
@@ -540,7 +541,8 @@ body.overlay::before {
 }
 
 .login-box input[type="email"]:focus,
-.login-box input[type="password"]:focus {
+.login-box input[type="password"]:focus,
+.login-box input[type="text"] :focus {
   border-color: var(--mainColor);
   outline: none;
 }
