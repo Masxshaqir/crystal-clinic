@@ -38,10 +38,14 @@ Welcome to **Crystal Dent**, a comprehensive web application designed to offer a
 - **Service Listing**: Users can view a list of dental services, including General Dentistry, Orthodontics, Periodontics, Oral Surgery, and Cosmetic Dentistry.
 - **Reviews Section**: Patients can read reviews and share their experiences.
 - **Appointment Booking**: A booking form is available for scheduling dental appointments, complete with a confirmation modal.
+- **User show all upcomming Appointments**: An interactive section where users can view all his upcomming Appointment.
+- **User Edit Appointment**: An interactive section where users can Edit on his submitted Appointment.
+- **User delete Appointment**: An interactive section where users can delete his submitted Appointment.
 - **Double Booking Prevention**: The system is developed to avoid double booking by ensuring that no two appointments are scheduled at the same time.
 - **Instant Confirmation**: After booking an appointment, the client will see a popup message confirming the appointment and will receive an email with the appointment details.
 - **Admin Panel Access**: Admins can access the admin panel using a username and password to manage data, including services, appointments, and user feedback.
 - **User Comments**: An interactive section where users can leave and read comments about their experiences.
+  
 
  ### Usage
 
