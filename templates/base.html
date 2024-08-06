@@ -64,8 +64,17 @@
           <a href="#services" class="nav-menu_item">Services</a>
           <a href="#booking" class="nav-menu_item">Booking</a>
           <a href="#contact" class="nav-menu_item">Contact Us</a>
+          {% if user.is_authenticated %}
           <a href="#Appointments" class="nav-menu_item">My Appointments</a>
+        {% endif %}     
         </nav>
+        <div>
+          {% if user.is_authenticated %}
+          <a type="button" class="btn btn-outline-light" href="/Logout/">Logout</a>
+        {% else %}
+          <a type="button" class="btn btn-outline-light" href="/login/">Login</a>
+        {% endif %}     
+       </div>
       </div>
     </header>
     {% endblock %} {% block main %} {% endblock %} {% block footer %}

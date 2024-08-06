@@ -24,17 +24,8 @@ from datetime import datetime
 from .models import User
 
 
-@login_required(login_url="/")
-def index(request):
-    # get all comments from DB to list it in UI
-    all_comments = list(Comment.objects.all().values("comment"))
-    all_Appointements = list(
-        Book.objects.filter(user=request.user, date__gte=datetime.now().date()).values(
-            "id", "date", "time"
-        )
-    )
-    context = {"all_comments": all_comments, "all_Appointements": all_Appointements}
-    # check if request methos id POST or not
+@login_required(login_url="/login/")
+def add_appointment (request):
     if request.method == "POST":
         try:
             # make this as transaction to excute it as abulk or rollback all
@@ -80,15 +71,32 @@ def index(request):
 
         return redirect(index)
 
-    else:
-        # Retrieve messages from session
-        context["success"] = request.session.pop("success", None)
-        context["error"] = request.session.pop("error", None)
 
-        return render(request, "index.html", context)
+def index(request):
+    # get all comments from DB to list it in UI
+    all_comments = list(Comment.objects.all().values("comment"))
+    all_Appointements=[]
+    if request.user.is_authenticated:
+        all_Appointements = list(
+            Book.objects.filter(user=request.user, date__gte=datetime.now().date()).values(
+                "id", "date", "time"
+            )
+        )
+    context = {"all_comments": all_comments, "all_Appointements": all_Appointements}
+        
+    # check if request methos id POST or not
+    # Retrieve messages from session
+    context["success"] = request.session.pop("success", None)
+    context["error"] = request.session.pop("error", None)
+
+    return render(request, "index.html", context)
 
 
-@login_required(login_url="/")
+
+
+
+
+@login_required(login_url="/login/")
 def add_comment(request):
     if request.method == "POST":
         try:
@@ -109,7 +117,7 @@ def add_comment(request):
         return redirect("/#reviews")
 
 
-@login_required(login_url="/")
+@login_required(login_url="/login/")
 def delete_book(request, ID):
     book = Book.objects.filter(id=ID)
     if book:
@@ -120,7 +128,7 @@ def delete_book(request, ID):
         return redirect(index)
 
 
-@login_required(login_url="/")
+@login_required(login_url="/login/")
 def update_book(request):
     if request.method == "POST":
         try:
@@ -192,7 +200,7 @@ def login(request):
         return render(request, "login.html")
 
 
-@login_required(login_url="/")
+@login_required(login_url="/login/")
 def Logout(request):
     try:
         user = User.objects.filter(username=request.user.username)

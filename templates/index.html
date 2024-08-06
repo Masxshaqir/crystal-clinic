@@ -126,7 +126,7 @@
 <section id="booking" class="booking_section">
   <h2 class="section_title">Book an Appointment</h2>
   <div class="bookingForm">
-    <form id="bookingForm" method="POST">
+    <form id="bookingForm" method="POST" action="/add_appointment/">
       {% csrf_token %}
       <input type="text" id="name" name="name" required placeholder="Name:" />
       <input type="email" id="email" name="email" required placeholder="Email:" />
@@ -207,7 +207,6 @@
     </tbody>
   </table>
   {% else %}
-  <h2 class="d-flex justify-content-center">No Appointements Yet</h2>
   
   {%endif%}
   
