@@ -1,13 +1,16 @@
 
-from landing_page.views import add_comment, index, login_view, signup_view, appointments_view
+from landing_page.views import *
 from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
+    path('home/', index),
     path('add_comment/', add_comment),
-    path('login/', login_view, name='login'),
-    path('signup/', signup_view, name='signup'),
-    path('appointments/', appointments_view, name='appointments'),
+    path('', login, name='login'),
+    path('signup/', signup, name='signup'),
+    path('Logout/', Logout, name='Logout'),
+    path('appointments/', appointments, name='appointments'),
+    path('delete_book/<int:ID>', delete_book, name='delete_book'),
+    path('update_book/', update_book, name='update_book')
 ]
