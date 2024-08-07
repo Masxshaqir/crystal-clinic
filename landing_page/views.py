@@ -206,7 +206,7 @@ def Logout(request):
         user = User.objects.filter(username=request.user.username)
         if user:
             logout(request)
-            return redirect(login)
+            return redirect(index)
 
     except Exception as e:
         messages.error(request, str(e))
