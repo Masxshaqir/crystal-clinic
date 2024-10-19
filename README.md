@@ -105,16 +105,26 @@ python manage.py runserver
 Navigate to http://127.0.0.1:8000/admin and log in using the superuser credentials you created
 ```
 
-## Deployment
-To Deploy This project to heroku follow the steps.
 
-1. Create New App on heroku
-2. On Deployment method Choose Github
-3. on your django project insure you have requirements.txt
-4. on your django project insure you have runtime.txt and write in this the python version you want to use
-5. on your django project insure you have Procfile and write in this the web: gunicorn crystal.wsgi
-6. in your project run the following command to collect static files python manage.py collectstatic
-7. upload last version of your project to github
-8. in Manual deploy section on heroku website choose deploy branch
+### Deployment to Heroku
+To deploy the application to Heroku, follow these steps:
+1. **Prerequisites**
+    - Ensure you have a Heroku account.
+    - Ensure your project is hosted on GitHub.
+2. **Steps**
+   - Create a New Heroku App.
+       Log in to your Heroku dashboard.
+       Click on the New button in the top right corner and select Create New App.
+       Provide a unique name for your app and choose a region. Click Create App.
+
+   - Connect to GitHub Repository
+       In your Heroku app dashboard, go to the Deploy tab.
+       In the Deployment method section, select GitHub.
+       Search for your repository by name and click Connect.
+
+   
+   - Enable Automatic Deploys (Optional)
+       In the Deploy tab, you can enable Automatic Deploys from the GitHub branch of your choice. This will automatically deploy your app whenever you push changes to that branch.
+       Alternatively, you can deploy manually by clicking Deploy Branch under the Manual Deploy section.
 
 
