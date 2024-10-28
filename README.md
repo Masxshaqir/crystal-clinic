@@ -112,7 +112,20 @@ to access databse go to https://crystal-website-21a243b9531a.herokuapp.com/admin
 and login with Email : admin@admin.com
 	       password : admin
 
+## Testing
+This project includes both manual and automated testing to ensure reliable functionality and a smooth user experience for patients and staff.
 
+- Unit Tests: Verify individual components and utility functions, like appointment scheduling and patient data handling.
+- Integration Tests: Confirm interactions between modules, such as managing appointments, patient records, and notifications.
+- End-to-End Tests: Simulate real user actions, like patient registration, booking an appointment, and receiving reminders.
+- UI Tests: Ensure proper rendering and responsiveness across various devices.
+- Performance Tests: Check load times and responsiveness, especially for viewing and managing appointments.
+Manual Testing
+
+- Basic Functionality: Register a new patient, log in, schedule appointments, and manage appointments.
+- UI Responsiveness: Test adaptability of the interface on mobile, tablet, and desktop devices.
+- Error Handling: Verify that appropriate error messages are shown for issues like missing required fields in booking.
+  
 ### Deployment to Heroku
 To deploy the application to Heroku, follow these steps:
 1. **Prerequisites**
@@ -134,4 +147,10 @@ To deploy the application to Heroku, follow these steps:
        In the Deploy tab, you can enable Automatic Deploys from the GitHub branch of your choice. This will automatically deploy your app whenever you push changes to that branch.
        Alternatively, you can deploy manually by clicking Deploy Branch under the Manual Deploy section.
 
+## Wireframes
+![WhatsApp Image 2024-10-28 at 11 18 30 PM](https://github.com/user-attachments/assets/889ab41b-f42b-4fa0-8f3a-240ec7f65175)
+![WhatsApp Image 2024-10-28 at 11 18 30 PM (1)](https://github.com/user-attachments/assets/196b06bc-5709-4b3c-a173-f5589938b35e)
+![WhatsApp Image 2024-10-28 at 11 18 31 PM](https://github.com/user-attachments/assets/3a5a4752-db88-487b-83f4-6b5488a20545)
+![WhatsApp Image 2024-10-28 at 11 18 31 PM (1)](https://github.com/user-attachments/assets/c9007d10-6054-44b9-8f93-21da9cdca179)
+![WhatsApp Image 2024-10-28 at 11 18 31 PM (2)](https://github.com/user-attachments/assets/dcf45f27-0fdf-46fb-a4e4-768dde8e14fd)
 
