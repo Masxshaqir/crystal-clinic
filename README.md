@@ -108,7 +108,7 @@ python manage.py runserver
 Navigate to http://127.0.0.1:8000/admin and log in using the superuser credentials you created
 ```
 ## Databse Access
-to access databse go to [https://crystal-website-21a243b9531a.herokuapp.com/admin](https://contentsharing-9b70377869cc.herokuapp.com/admin)
+to access databse go to https://crystal-website-21a243b9531a.herokuapp.com/admin
 and login with Email : admin@admin.com
 	       password : admin
 
