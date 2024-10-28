@@ -1,14 +1,17 @@
 
 # Crystal Dent
-![Screenshot 2024-08-01 at 21 46 04](https://github.com/user-attachments/assets/531f7b45-80d4-4641-8fab-30771166d040)
+![welcome](https://github.com/user-attachments/assets/26d9fd14-7c87-47b0-a76e-d368ebd748fe)
+
 Welcome to **Crystal Dent**, a comprehensive web application designed to offer an exceptional dental service experience. This project aims to provide users with easy access to various dental services, enabling them to book appointments and leave reviews about their experiences.
 
 # Modern list Design with Animation
-![Screenshot 2024-08-01 at 21 47 10](https://github.com/user-attachments/assets/60ec8dc3-0b2b-4912-9e23-1cd551b44b88)
+![Screenshot from 2024-10-28 23-02-10](https://github.com/user-attachments/assets/c658b0a7-7672-437c-a3aa-ff46a1d931ae)
+
     •	Enhanced User Engagement: The combination of animations and striking visuals captures user attention, encouraging them to explore further and interact with the site.
 
 # Booking Section 
-![Screenshot 2024-08-01 at 21 47 33](https://github.com/user-attachments/assets/fa8d9449-3cbf-4af1-bf62-a71f504ec945)
+![Screenshot from 2024-10-28 23-02-43](https://github.com/user-attachments/assets/33c1f5d5-c6e3-477a-a6fd-c1c72de43ea8)
+
 
 # Show all Appointments Section 
 ![Screenshot from 2024-08-06 23-27-07](https://github.com/user-attachments/assets/d7e7ae94-b844-473c-8dbb-4198ccfe8d1b)
@@ -104,6 +107,10 @@ python manage.py runserver
 	7. Access the Admin Panel
 Navigate to http://127.0.0.1:8000/admin and log in using the superuser credentials you created
 ```
+## Databse Access
+to access databse go to [https://crystal-website-21a243b9531a.herokuapp.com/admin](https://contentsharing-9b70377869cc.herokuapp.com/admin)
+and login with Email : admin@admin.com
+	       password : admin
 
 
 ### Deployment to Heroku
