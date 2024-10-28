@@ -120,12 +120,26 @@ This project includes both manual and automated testing to ensure reliable funct
 - End-to-End Tests: Simulate real user actions, like patient registration, booking an appointment, and receiving reminders.
 - UI Tests: Ensure proper rendering and responsiveness across various devices.
 - Performance Tests: Check load times and responsiveness, especially for viewing and managing appointments.
-Manual Testing
 
+Manual Testing
 - Basic Functionality: Register a new patient, log in, schedule appointments, and manage appointments.
 - UI Responsiveness: Test adaptability of the interface on mobile, tablet, and desktop devices.
 - Error Handling: Verify that appropriate error messages are shown for issues like missing required fields in booking.
 
+  HTML Validation:
+	 • I tested the HTML code using the W3C HTML Validator.
+	 • This validation process checked for syntax errors, invalid elements, and attributes, ensuring the HTML markup complies with W3C standards.
+	 • All identified issues have been addressed, resulting in clean, standards-compliant HTML code.
+  CSS Validation:
+	 • CSS code was validated using the W3C CSS Validator.
+	 • The validation checked for syntax errors, deprecated properties, and compatibility issues across browsers.
+	 • After reviewing the results, necessary adjustments were made, confirming that the CSS is error-free and aligned with current standards.
+  JavaScript Validation:
+	 • JavaScript code was validated using JSHint to identify any syntax errors, potential issues, or deviations from best practices.
+	 • The process helped detect areas for optimization and ensure adherence to ES6+ standards where applicable.
+	 • Any highlighted issues were resolved, resulting in clean, well-optimized JavaScript code.
+
+By validating the HTML, CSS, and JavaScript, I’ve ensured that the codebase is robust, adheres to web standards, and is optimized for performance and compatibility across different browsers.
 ## Admin Panel Access
 to access databse go to https://crystal-website-21a243b9531a.herokuapp.com/admin
 and login with Email : admin@admin.com
