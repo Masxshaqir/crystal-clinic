@@ -125,7 +125,12 @@ Manual Testing
 - Basic Functionality: Register a new patient, log in, schedule appointments, and manage appointments.
 - UI Responsiveness: Test adaptability of the interface on mobile, tablet, and desktop devices.
 - Error Handling: Verify that appropriate error messages are shown for issues like missing required fields in booking.
-  
+
+## Admin Panel Access
+to access databse go to https://crystal-website-21a243b9531a.herokuapp.com/admin
+and login with Email : admin@admin.com
+	       password : admin
+	
 ### Deployment to Heroku
 To deploy the application to Heroku, follow these steps:
 1. **Prerequisites**
